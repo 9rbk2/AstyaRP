@@ -48,7 +48,22 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #0f0f23 100%);
+    background-image:
+        linear-gradient(135deg, rgba(15, 15, 35, 0.95) 0%, rgba(26, 26, 46, 0.90) 50%, rgba(15, 15, 35, 0.95) 100%),
+        url('gta-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: subtleZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtleZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
 }
 
 .particle {
@@ -140,6 +155,24 @@ body {
     align-items: center;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-logo {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.6));
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.9));
+    transform: scale(1.05);
+}
+
 .nav-brand h1 {
     font-size: 1.8rem;
     font-weight: 700;
@@ -185,6 +218,32 @@ body {
 .nav-menu a:hover::before,
 .nav-menu a.active::before {
     width: 80%;
+}
+
+/* ============= DISCORD BUTTON ============= */
+.discord-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #5865F2, #7289DA);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+}
+
+.discord-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5);
+    background: linear-gradient(135deg, #7289DA, #5865F2);
+}
+
+.discord-btn svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* ============= HERO SECTION ============= */
@@ -451,13 +510,58 @@ section {
     background: var(--bg-card);
     border-top: 2px solid var(--primary-color);
     padding: 2rem 0;
-    text-align: center;
     margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-center {
+    flex: 1;
+    text-align: center;
 }
 
 .footer p {
     color: var(--text-muted);
     margin: 0.5rem 0;
+}
+
+.copyright-rbk {
+    color: rgba(100, 100, 100, 0.3) !important;
+    font-size: 0.75rem !important;
+    margin: 0 !important;
+}
+
+.discord-btn-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #5865F2, #7289DA);
+    color: white !important;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+    transition: var(--transition);
+}
+
+.discord-btn-footer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(88, 101, 242, 0.5);
+}
+
+.discord-btn-footer svg {
+    transition: var(--transition);
+}
+
+.discord-btn-footer:hover svg {
+    transform: rotate(15deg);
 }
 
 /* ============= ANIMATIONS ============= */
